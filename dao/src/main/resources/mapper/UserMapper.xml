@@ -31,4 +31,26 @@ select id, username,phone,email,udate from user
     <update id="updUser" parameterType="user">
         update user set username=#{username},email=#{email},phone=#{phone} where id=#{id};
     </update>
+
+
+    <select id="selectgoods" resultType="goods">
+          select * from goods
+    </select>
+
+
+    <delete id="deletegood">
+        delete from goods  where id=#{id}
+    </delete>
+
+
+    <insert id="insertgood" parameterType="goods">
+            insert into goods(id,name,price,count )
+            value(#{id},#{name},#{price},#{count})
+    </insert>
+
+
+    <update id="updategood" parameterType="goods">
+        update goods set name=#{name},count=#{count},price=#{price} where id=#{id};
+    </update>
+
 </mapper>

@@ -1,5 +1,6 @@
 package com.zhengguan.SSMjm.dao;
 
+import com.zhengguan.SSMjm.entities.Goods;
 import com.zhengguan.SSMjm.entities.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -53,5 +54,40 @@ public class UserDaoTest {
             user.setPhone("234234134134");
         System.out.println(userDao.updUser(user));
     }
+
+
+    @Test
+    public void selectgoods() {
+        System.out.println(userDao.selectgoods());
+    }
+
+    @Test
+    public void deletegoods() {
+        System.out.println(userDao.deletegood(1));
+    }
+
+    @Test
+    public void insertgoods() {
+        Goods goods=new Goods();
+        goods.setId(1);
+        goods.setName("橘子");
+        goods.setCount(1);
+        goods.setPrice("13");
+
+        System.out.println(userDao.insertgood(goods));
+    }
+
+    @Test
+    public void updategoods() {
+        Goods goods=new Goods();
+
+        goods.setName("尿丰");
+        goods.setCount(1);
+        goods.setPrice("13");
+        goods.setId(1);
+        System.out.println(userDao.updategood(goods));
+    }
+
+
 
 }

@@ -1,5 +1,6 @@
 package com.zhengguan.SSMjm.dao;
 
+import com.zhengguan.SSMjm.entities.Goods;
 import com.zhengguan.SSMjm.entities.User;
 import org.apache.ibatis.annotations.Param;
 
@@ -17,5 +18,18 @@ public interface UserDao {
     User findWithLoginAndPassword(@Param("username")String username,@Param("password")String password);
 
     int updpwd(@Param("id") int id,@Param("passWord") String passWord);
+
     int updUser(User user);
+
+
+    public  List<Goods>selectgoods();
+
+    int deletegood(int id);
+
+    int insertgood(Goods goods);
+
+    int updategood(Goods goods);
+
+
+
 }
